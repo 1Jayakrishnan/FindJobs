@@ -16,18 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import accountApp.urls
-import employeeApp.urls
-import jobseekerApp.urls
-
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns, static
 from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("JobPortal/", include('accountApp.urls')),
+    path("jobportal/", include('accountApp.urls')),
     path("employeeApp/", include("employeeApp.urls")),
-    path("jobseekerApp/", include("jobseekerApp.urls"))
+    path("jobportal/jobseeker/", include("jobseekerApp.urls"))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
